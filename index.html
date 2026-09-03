@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A little something for Chiku</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- floating background doodles, present behind every scene -->
+<div class="doodles" aria-hidden="true">
+  <span class="doodle d1">✦</span>
+  <span class="doodle d2">♡</span>
+  <span class="doodle d3">✦</span>
+  <span class="doodle d4">♡</span>
+  <span class="doodle d5">✦</span>
+  <span class="doodle d6">♡</span>
+  <span class="doodle d7">✦</span>
+</div>
+
+<main id="stage">
+
+  <!-- SCENE 0: password lock -->
+  <section class="scene active" id="scene-lock">
+    <div class="card">
+      <p class="script-line">something's waiting here</p>
+      <h1>This corner of the internet<br>is just for <span class="name">Chiku</span>.</h1>
+      <p class="sub">Type the password to open it.</p>
+      <form id="lock-form" autocomplete="off">
+        <input type="password" id="password-input" placeholder="Enter password" inputmode="numeric">
+        <button type="submit" class="btn-pill filled">Unlock</button>
+      </form>
+      <p class="error-msg" id="lock-error">Not quite — try again.</p>
+    </div>
+  </section>
+
+  <!-- SCENE 1: consent -->
+  <section class="scene" id="scene-ask">
+    <div class="card">
+      <div class="char char-wave">
+        <svg viewBox="0 0 200 190" width="150" height="142"><use href="#bear-wave"></use></svg>
+      </div>
+      <h1 class="punchy">HEY!!</h1>
+      <p class="script-line big">I made something for you</p>
+      <p class="script-elegant dim">Do you want to see?</p>
+      <div class="choice-row">
+        <button class="btn-pill filled" id="btn-yes">Yes</button>
+        <button class="btn-pill" id="btn-no">No</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 2: the "no" joke loop -->
+  <section class="scene" id="scene-nope">
+    <div class="card">
+      <div class="char char-shake">
+        <svg viewBox="0 0 200 190" width="130" height="124"><use href="#bear-sad"></use></svg>
+      </div>
+      <h1 class="punchy" id="nope-heading">HOW DARE YOU</h1>
+      <p class="sub" id="nope-sub">There's no escaping this one, Chiku.</p>
+      <button class="btn-pill filled" id="btn-goback">Go back</button>
+    </div>
+  </section>
+
+  <!-- SCENE 3: happy transition -->
+  <section class="scene" id="scene-happy">
+    <div class="card">
+      <div class="char">
+        <svg viewBox="0 0 200 190" width="140" height="132"><use href="#bear-happy"></use></svg>
+      </div>
+      <p class="script-elegant">That's a good Chiku</p>
+      <button class="btn-pill filled" id="btn-to-letter">Continue</button>
+    </div>
+  </section>
+
+  <!-- SCENE 4: envelope / love note -->
+  <section class="scene" id="scene-letter">
+    <div class="card">
+      <div class="letter-intro" id="letter-intro">
+        <h1>No reason needed.</h1>
+        <p class="sub">Just because you're you — here's a little note.</p>
+      </div>
+
+      <div class="envelope-scene" id="envelope-scene">
+        <div class="charm-string"></div>
+        <div class="charm">
+          <svg viewBox="0 0 70 70" width="52" height="52"><use href="#bear-charm"></use></svg>
+        </div>
+
+        <div class="note-paper" id="note-paper">
+          <p>Chiku,</p>
+          <p>You are seen, you are heard, and you are loved, no matter what. If you ever feel unloved, remember that my love for you is <strong>boundless and endless</strong>.</p>
+          <p>You don't need a special day for someone to tell you how much you're loved — so today's just a random one, and that's exactly the point.</p>
+          <p>Thank you for being exactly who you are.</p>
+        </div>
+
+        <div class="env-back"></div>
+        <div class="env-pocket"></div>
+        <button class="env-flap" id="envelope-btn" aria-label="Open the letter"></button>
+
+        <div class="heart-lockets">
+          <div class="locket-frame">
+            <div class="locket">
+              <img src="images/locket1.jpg" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+              <div class="locket-fallback">📷</div>
+            </div>
+          </div>
+          <div class="locket-frame">
+            <div class="locket">
+              <img src="images/locket2.jpg" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+              <div class="locket-fallback">📷</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="tap-hint" id="tap-hint">tap the envelope to open</p>
+      <button class="btn-pill filled small" id="btn-to-gallery" style="display:none">Keep going</button>
+    </div>
+  </section>
+
+  <!-- SCENE 5: photo gallery -->
+  <section class="scene" id="scene-gallery">
+    <div class="card pink wide">
+      <svg class="cake-icon" viewBox="0 0 80 90" width="70" height="78" aria-hidden="true">
+        <rect x="10" y="45" width="60" height="35" rx="4" fill="#FFFDFA"/>
+        <rect x="10" y="45" width="60" height="10" fill="#F6C3D2"/>
+        <rect x="16" y="30" width="48" height="18" rx="3" fill="#FFFDFA"/>
+        <rect x="16" y="30" width="48" height="8" fill="#F0A9BE"/>
+        <rect x="37" y="10" width="6" height="22" fill="#FFFDFA"/>
+        <path d="M40 4 q4 6 0 10 q-4 -4 0 -10 Z" fill="#E7B65C"/>
+        <circle cx="24" cy="60" r="3" fill="#D8637F"/>
+        <circle cx="40" cy="64" r="3" fill="#D8637F"/>
+        <circle cx="56" cy="60" r="3" fill="#D8637F"/>
+      </svg>
+      <div class="clothesline">
+        <div class="polaroid">
+          <img src="images/photo1.jpg" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+          <div class="placeholder-icon">📷</div>
+          <p>#1</p>
+        </div>
+        <div class="polaroid">
+          <img src="images/photo2.jpg" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+          <div class="placeholder-icon">📷</div>
+          <p>#2</p>
+        </div>
+        <div class="polaroid">
+          <img src="images/photo3.jpg" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+          <div class="placeholder-icon">📷</div>
+          <p>#3</p>
+        </div>
+      </div>
+      <p class="i-love-you"><span class="heart-dot">♥</span>LOVE YOU</p>
+      <p class="sub light">You don't know how much you mean to me.</p>
+      <p class="sub light tiny">(swap these photos any time — see the README)</p>
+      <button class="btn-pill filled" id="btn-to-gift">One more thing...</button>
+    </div>
+  </section>
+
+  <!-- SCENE 6: gift box -->
+  <section class="scene" id="scene-gift">
+    <div class="card">
+      <p class="script-elegant huge">Here's a surprise for you!!!</p>
+      <button class="giftbox" id="gift-btn" aria-label="Open the gift">
+        <svg viewBox="0 0 180 170" width="180" height="170">
+          <defs>
+            <linearGradient id="giftGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F0A9BE"/>
+              <stop offset="1" stop-color="#D8637F"/>
+            </linearGradient>
+            <linearGradient id="lidGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F6C3D2"/>
+              <stop offset="1" stop-color="#E39CB2"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="90" cy="152" rx="60" ry="8" fill="#8B3A55" opacity="0.15"/>
+          <rect x="30" y="75" width="120" height="70" rx="6" fill="url(#giftGrad)" stroke="#8B3A55" stroke-width="2.5"/>
+          <rect class="gift-lid" x="20" y="52" width="140" height="26" rx="8" fill="url(#lidGrad)" stroke="#8B3A55" stroke-width="2.5"/>
+          <rect x="82" y="52" width="16" height="93" fill="#8B3A55" opacity="0.55"/>
+          <path class="bow" d="M90 52 C68 20, 36 26, 53 50 Z M90 52 C112 20, 144 26, 127 50 Z" fill="#F6C3D2" stroke="#8B3A55" stroke-width="2.5"/>
+          <circle cx="90" cy="52" r="7" fill="#D8637F" stroke="#8B3A55" stroke-width="2"/>
+        </svg>
+        <span class="tap-hint">Tap here</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SCENE 7: final hug -->
+  <section class="scene" id="scene-hug">
+    <div class="card">
+      <p class="script-elegant huge">Here is a virtual hug for you</p>
+      <div class="char hug-in">
+        <svg viewBox="0 0 220 200" width="220" height="200"><use href="#bear-hug"></use></svg>
+      </div>
+      <p class="sub big">Sending you the biggest hug, Chiku — no occasion needed, just wanted you to feel loved today.</p>
+      <div class="confetti" id="confetti"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- reusable original kawaii-bear illustrations -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+
+    <g id="bear-wave">
+      <circle cx="55" cy="55" r="26" fill="#D9AE8C"/>
+      <circle cx="145" cy="55" r="26" fill="#D9AE8C"/>
+      <circle cx="55" cy="55" r="13" fill="#F3D9C4"/>
+      <circle cx="145" cy="55" r="13" fill="#F3D9C4"/>
+      <circle cx="100" cy="100" r="72" fill="#E9C8AB"/>
+      <ellipse cx="100" cy="128" rx="36" ry="30" fill="#F7E6D4"/>
+      <circle cx="76" cy="98" r="7" fill="#4A3527"/>
+      <circle cx="124" cy="98" r="7" fill="#4A3527"/>
+      <circle cx="64" cy="118" r="9" fill="#F0A9BE" opacity="0.7"/>
+      <circle cx="136" cy="118" r="9" fill="#F0A9BE" opacity="0.7"/>
+      <ellipse cx="100" cy="122" rx="9" ry="7" fill="#4A3527"/>
+      <path d="M88 140 q12 8 24 0" stroke="#4A3527" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path class="paw-wave" d="M156 70 q22 -6 26 -30 q4 18 -10 30 q10 2 14 12 q-20 4 -30 -12 Z" fill="#E9C8AB" stroke="#4A3527" stroke-width="2"/>
+    </g>
+
+    <g id="bear-sad">
+      <circle cx="55" cy="55" r="26" fill="#D9AE8C"/>
+      <circle cx="145" cy="55" r="26" fill="#D9AE8C"/>
+      <circle cx="55" cy="55" r="13" fill="#F3D9C4"/>
+      <circle cx="145" cy="55" r="13" fill="#F3D9C4"/>
+      <circle cx="100" cy="100" r="72" fill="#E9C8AB"/>
+      <ellipse cx="100" cy="128" rx="36" ry="30" fill="#F7E6D4"/>
+      <path d="M64 92 q12 -10 24 0" stroke="#4A3527" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M112 92 q12 -10 24 0" stroke="#4A3527" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="100" cy="128" rx="7" ry="9" fill="#4A3527"/>
+      <path d="M84 148 q16 -10 32 0" stroke="#4A3527" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M46 118 q-4 14 4 22" stroke="#8FC7E8" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+    </g>
+
+    <g id="bear-happy">
+      <circle cx="55" cy="55" r="26" fill="#D9AE8C"/>
+      <circle cx="145" cy="55" r="26" fill="#D9AE8C"/>
+      <circle cx="55" cy="55" r="13" fill="#F3D9C4"/>
+      <circle cx="145" cy="55" r="13" fill="#F3D9C4"/>
+      <circle cx="100" cy="100" r="72" fill="#E9C8AB"/>
+      <ellipse cx="100" cy="128" rx="36" ry="30" fill="#F7E6D4"/>
+      <path d="M64 96 q12 12 24 0" stroke="#4A3527" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M112 96 q12 12 24 0" stroke="#4A3527" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="64" cy="116" r="9" fill="#F0A9BE" opacity="0.7"/>
+      <circle cx="136" cy="116" r="9" fill="#F0A9BE" opacity="0.7"/>
+      <ellipse cx="100" cy="122" rx="8" ry="6" fill="#4A3527"/>
+      <path d="M84 138 q16 14 32 0" stroke="#4A3527" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <g id="bear-hug">
+      <!-- left bear -->
+      <circle cx="65" cy="70" r="22" fill="#D9AE8C"/>
+      <circle cx="65" cy="70" r="11" fill="#F3D9C4"/>
+      <circle cx="78" cy="120" r="62" fill="#E9C8AB"/>
+      <!-- right bear -->
+      <circle cx="155" cy="70" r="22" fill="#C99C7C"/>
+      <circle cx="155" cy="70" r="11" fill="#F3D9C4"/>
+      <circle cx="142" cy="120" r="62" fill="#DCB694"/>
+      <!-- arms wrapping -->
+      <path d="M60 130 q50 46 100 0 q10 20 -6 34 q-46 30 -88 0 q-16 -14 -6 -34 Z" fill="#E9C8AB" stroke="#4A3527" stroke-width="2" opacity="0.95"/>
+      <!-- faces -->
+      <ellipse cx="82" cy="150" rx="30" ry="24" fill="#F7E6D4"/>
+      <ellipse cx="138" cy="150" rx="30" ry="24" fill="#F5E0CB"/>
+      <path d="M60 122 q10 -8 20 0" stroke="#4A3527" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M96 122 q10 -8 20 0" stroke="#4A3527" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M124 122 q10 -8 20 0" stroke="#4A3527" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M160 122 q10 -8 20 0" stroke="#4A3527" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="70" cy="144" r="7" fill="#F0A9BE" opacity="0.7"/>
+      <circle cx="150" cy="144" r="7" fill="#F0A9BE" opacity="0.7"/>
+      <path d="M72 158 q10 6 20 0" stroke="#4A3527" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M128 158 q10 6 20 0" stroke="#4A3527" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M108 40 l6 -16 l6 16 Z" fill="#D8637F"/>
+      <path d="M100 190 q10 -22 10 -22 q10 0 10 22" fill="none"/>
+    </g>
+
+    <g id="bear-charm">
+      <circle cx="18" cy="16" r="9" fill="#D9AE8C"/>
+      <circle cx="52" cy="16" r="9" fill="#D9AE8C"/>
+      <circle cx="18" cy="16" r="4" fill="#F3D9C4"/>
+      <circle cx="52" cy="16" r="4" fill="#F3D9C4"/>
+      <circle cx="35" cy="35" r="26" fill="#E9C8AB"/>
+      <ellipse cx="35" cy="45" rx="13" ry="11" fill="#F7E6D4"/>
+      <circle cx="27" cy="33" r="2.6" fill="#4A3527"/>
+      <circle cx="43" cy="33" r="2.6" fill="#4A3527"/>
+      <circle cx="23" cy="41" r="3" fill="#F0A9BE" opacity="0.7"/>
+      <circle cx="47" cy="41" r="3" fill="#F0A9BE" opacity="0.7"/>
+      <ellipse cx="35" cy="43" rx="3" ry="2.4" fill="#4A3527"/>
+    </g>
+
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
