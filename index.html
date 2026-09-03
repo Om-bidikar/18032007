@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A little something for Chiku</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- floating background doodles, present behind every scene -->
+<div class="doodles" aria-hidden="true">
+  <span class="doodle d1">✦</span>
+  <span class="doodle d2">♡</span>
+  <span class="doodle d3">✦</span>
+  <span class="doodle d4">♡</span>
+  <span class="doodle d5">✦</span>
+  <span class="doodle d6">♡</span>
+  <span class="doodle d7">✦</span>
+</div>
+
+<main id="stage">
+
+  <!-- SCENE 0: password lock -->
+  <section class="scene active" id="scene-lock">
+    <div class="blob blob-a"></div>
+    <div class="card">
+      <p class="eyebrow-free-label">something's waiting here</p>
+      <h1>This corner of the internet<br>is just for <span class="name">Chiku</span>.</h1>
+      <p class="sub">Type the password to open it.</p>
+      <form id="lock-form" autocomplete="off">
+        <input type="password" id="password-input" placeholder="Enter password" inputmode="numeric">
+        <button type="submit" class="btn-primary">Unlock</button>
+      </form>
+      <p class="error-msg" id="lock-error">Not quite — try again.</p>
+    </div>
+  </section>
+
+  <!-- SCENE 1: consent -->
+  <section class="scene" id="scene-ask">
+    <div class="blob blob-b"></div>
+    <div class="card">
+      <div class="char char-wave">
+        <svg viewBox="0 0 200 200" width="140" height="140"><use href="#chibi-girl"></use></svg>
+      </div>
+      <h1>Hii Chiku!</h1>
+      <p class="sub big">I made a little something for you.<br>Wanna see it?</p>
+      <div class="choice-row">
+        <button class="btn-primary" id="btn-yes">Yes, show me!</button>
+        <button class="btn-ghost" id="btn-no">No</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 2: the "no" joke loop -->
+  <section class="scene" id="scene-nope">
+    <div class="blob blob-c"></div>
+    <div class="card">
+      <div class="char char-shake">
+        <svg viewBox="0 0 200 200" width="120" height="120"><use href="#chibi-girl-sad"></use></svg>
+      </div>
+      <h1 id="nope-heading">How dare you 😤</h1>
+      <p class="sub" id="nope-sub">There's no escaping this one, Chiku.</p>
+      <button class="btn-primary" id="btn-goback">Okay fine, go back</button>
+    </div>
+  </section>
+
+  <!-- SCENE 3: happy transition -->
+  <section class="scene" id="scene-happy">
+    <div class="blob blob-a"></div>
+    <div class="card">
+      <div class="char">
+        <svg viewBox="0 0 200 200" width="130" height="130"><use href="#chibi-girl-happy"></use></svg>
+      </div>
+      <h1>That's my Chiku <span class="wiggle">🌻</span></h1>
+      <p class="sub big">Okay, keep going — this gets better.</p>
+      <button class="btn-primary" id="btn-to-letter">Continue</button>
+    </div>
+  </section>
+
+  <!-- SCENE 4: envelope / love note -->
+  <section class="scene" id="scene-letter">
+    <div class="blob blob-b"></div>
+    <div class="card">
+      <h1>No reason needed.</h1>
+      <p class="sub">Just because you're you — here's a little note.</p>
+      <button class="envelope" id="envelope-btn" aria-label="Open the letter">
+        <svg viewBox="0 0 220 160" width="220" height="160">
+          <rect x="6" y="10" width="208" height="140" rx="10" fill="#F6E3E9" stroke="#3A2145" stroke-width="3"/>
+          <path d="M6 20 L110 100 L214 20" fill="none" stroke="#3A2145" stroke-width="3"/>
+          <path class="flap" d="M6 20 L110 90 L214 20 L214 20 Q110 -10 6 20 Z" fill="#E8547C" stroke="#3A2145" stroke-width="3"/>
+        </svg>
+        <span class="tap-hint">tap to open</span>
+      </button>
+      <div class="letter-text" id="letter-text">
+        <p>Chiku,</p>
+        <p>You don't need a special day for someone to tell you how much you're loved — so today's just a random one, and that's exactly the point.</p>
+        <p>You are seen, you are heard, and you are loved, no matter what. If you ever feel unloved, remember that this love for you is boundless and endless.</p>
+        <p>Thank you for being exactly who you are. 🤍</p>
+        <button class="btn-primary small" id="btn-to-gallery">Keep going</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 5: photo gallery -->
+  <section class="scene" id="scene-gallery">
+    <div class="blob blob-c"></div>
+    <div class="card wide">
+      <h1>A few of my favourites</h1>
+      <p class="sub">(swap these for real photos any time — see the README)</p>
+      <div class="clothesline">
+        <div class="polaroid">
+          <img src="images/photo1.jpg" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+          <div class="placeholder-icon">📷</div>
+          <p>#1</p>
+        </div>
+        <div class="polaroid">
+          <img src="images/photo2.jpg" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+          <div class="placeholder-icon">📷</div>
+          <p>#2</p>
+        </div>
+        <div class="polaroid">
+          <img src="images/photo3.jpg" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+          <div class="placeholder-icon">📷</div>
+          <p>#3</p>
+        </div>
+      </div>
+      <p class="i-love-you">I love you, Chiku.</p>
+      <button class="btn-primary" id="btn-to-gift">One more thing...</button>
+    </div>
+  </section>
+
+  <!-- SCENE 6: gift box -->
+  <section class="scene" id="scene-gift">
+    <div class="blob blob-a"></div>
+    <div class="card">
+      <h1>Here's a surprise for you!</h1>
+      <p class="sub">Tap the box.</p>
+      <button class="giftbox" id="gift-btn" aria-label="Open the gift">
+        <svg viewBox="0 0 180 160" width="170" height="150">
+          <rect class="gift-lid" x="20" y="45" width="140" height="26" rx="6" fill="#B9A6E0" stroke="#3A2145" stroke-width="3"/>
+          <rect x="30" y="71" width="120" height="80" rx="8" fill="#E8547C" stroke="#3A2145" stroke-width="3"/>
+          <rect x="82" y="45" width="16" height="106" fill="#FFCB4C"/>
+          <rect x="20" y="45" width="140" height="16" fill="#FFCB4C"/>
+          <path class="bow" d="M90 45 C70 15, 40 20, 55 42 Z M90 45 C110 15, 140 20, 125 42 Z" fill="#FFCB4C" stroke="#3A2145" stroke-width="3"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- SCENE 7: final hug -->
+  <section class="scene" id="scene-hug">
+    <div class="blob blob-b"></div>
+    <div class="card">
+      <div class="char hug-in">
+        <svg viewBox="0 0 260 220" width="240" height="200"><use href="#chibi-hug"></use></svg>
+      </div>
+      <h1>A virtual hug, just for you</h1>
+      <p class="sub big">🤗 Sending you the biggest hug, Chiku — no occasion needed, just wanted you to feel loved today.</p>
+      <div class="confetti" id="confetti"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- reusable original chibi illustrations -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="chibi-girl">
+      <circle cx="100" cy="115" r="55" fill="#E8547C"/>
+      <circle cx="100" cy="80" r="48" fill="#FFDCC2"/>
+      <path d="M52 80 a48 48 0 0 1 96 0 q0 -30 -48 -34 q-48 4 -48 34 Z" fill="#3A2145"/>
+      <circle cx="60" cy="60" r="10" fill="#3A2145"/>
+      <circle cx="140" cy="60" r="10" fill="#3A2145"/>
+      <circle cx="82" cy="82" r="5" fill="#3A2145"/>
+      <circle cx="118" cy="82" r="5" fill="#3A2145"/>
+      <circle cx="70" cy="96" r="7" fill="#F4A6B6" opacity="0.8"/>
+      <circle cx="130" cy="96" r="7" fill="#F4A6B6" opacity="0.8"/>
+      <path d="M88 100 q12 10 24 0" stroke="#3A2145" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="chibi-girl-happy">
+      <circle cx="100" cy="115" r="55" fill="#7FD8C0"/>
+      <circle cx="100" cy="80" r="48" fill="#FFDCC2"/>
+      <path d="M52 80 a48 48 0 0 1 96 0 q0 -30 -48 -34 q-48 4 -48 34 Z" fill="#3A2145"/>
+      <path d="M52 58 a10 10 0 0 1 20 0" stroke="#3A2145" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M128 58 a10 10 0 0 1 20 0" stroke="#3A2145" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="70" cy="96" r="7" fill="#F4A6B6" opacity="0.8"/>
+      <circle cx="130" cy="96" r="7" fill="#F4A6B6" opacity="0.8"/>
+      <path d="M82 98 q18 18 36 0" stroke="#3A2145" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="chibi-girl-sad">
+      <circle cx="100" cy="115" r="55" fill="#B9A6E0"/>
+      <circle cx="100" cy="80" r="48" fill="#FFDCC2"/>
+      <path d="M52 80 a48 48 0 0 1 96 0 q0 -30 -48 -34 q-48 4 -48 34 Z" fill="#3A2145"/>
+      <circle cx="60" cy="62" r="9" fill="#3A2145"/>
+      <circle cx="140" cy="62" r="9" fill="#3A2145"/>
+      <path d="M50 50 q10 -8 20 -2" stroke="#3A2145" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M130 48 q10 -6 20 2" stroke="#3A2145" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M85 105 q15 -10 30 0" stroke="#3A2145" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="chibi-hug">
+      <circle cx="90" cy="150" r="52" fill="#E8547C"/>
+      <circle cx="170" cy="150" r="52" fill="#7FD8C0"/>
+      <path d="M55 150 q35 40 70 0" stroke="#3A2145" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M205 150 q-35 40 -70 0" stroke="#3A2145" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <circle cx="95" cy="85" r="42" fill="#FFDCC2"/>
+      <circle cx="165" cy="85" r="42" fill="#FFDCC2"/>
+      <path d="M53 85 a42 42 0 0 1 84 0 q0 -26 -42 -30 q-42 4 -42 30 Z" fill="#3A2145"/>
+      <path d="M123 85 a42 42 0 0 1 84 0 q-6 -24 -42 -28 q-36 4 -42 28 Z" fill="#3A2145"/>
+      <circle cx="80" cy="88" r="5" fill="#3A2145"/>
+      <circle cx="108" cy="88" r="5" fill="#3A2145"/>
+      <circle cx="152" cy="88" r="5" fill="#3A2145"/>
+      <circle cx="180" cy="88" r="5" fill="#3A2145"/>
+      <path d="M84 104 q10 8 20 0" stroke="#3A2145" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M154 104 q10 8 20 0" stroke="#3A2145" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M118 60 l6 -14 l6 14 Z" fill="#FFCB4C"/>
+    </g>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
