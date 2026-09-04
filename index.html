@@ -19,7 +19,7 @@
 .asset{display:block;object-fit:contain;margin:auto}
 .password-box{width:min(450px,86%)}.password-box h1{font:600 clamp(38px,4.2vw,52px) "Dancing Script";color:#7d3f51;margin:0 0 17px}
 .password-box input{width:100%;height:58px;border:2px solid #c58b9d;border-radius:18px;background:#fffaf8;text-align:center;outline:none;font:26px "Patrick Hand";color:#66394a}.error{height:30px;color:#a23856;font-size:21px;padding-top:5px}
-.hey-content{position:relative;width:min(780px,88%);display:flex;flex-direction:column;align-items:center;justify-content:center}.hey-content .asset{width:min(320px,34vw);height:min(285px,30vh);margin:0 auto 2px;object-fit:contain}.question{margin:12px 0 20px}.buttons{display:flex;justify-content:center;gap:28px}
+.hey-content{position:relative;width:min(780px,88%);display:flex;flex-direction:column;align-items:center;justify-content:center}.hey-content .asset{width:min(360px,36vw);height:min(300px,31vh);margin:0 auto 2px;object-fit:contain}.question{margin:12px 0 20px}.buttons{display:flex;justify-content:center;gap:28px}
 .angry-content{display:flex;flex-direction:column;align-items:center;justify-content:center}.angry-content .asset{width:min(380px,38vw);height:min(335px,36vh);border-radius:20px;margin:0 auto 4px;mix-blend-mode:screen;filter:contrast(1.12) saturate(.92)}.angry-content .title{font-size:clamp(48px,6.5vw,82px)}.angry-content .btn{margin-top:16px}
 .good-content{display:flex;flex-direction:column;align-items:center;justify-content:center}.good-content .asset{width:min(390px,38vw);height:min(335px,36vh)}.good-girl-video{object-fit:contain;border-radius:18px;mix-blend-mode:screen;filter:contrast(1.12) saturate(.92)}.good-text{color:#873d58;margin:8px 0 18px}
 .photos-scene{align-items:flex-start;padding-top:72px}.rope{position:absolute;top:82px;left:11%;right:11%;height:3px;background:#5a4b4d;transform:rotate(-3deg)}
@@ -36,7 +36,32 @@
 .gift-box.open .gift-lid{transform:translateY(-75px) rotateX(20deg) rotateZ(-2deg)}.ribbon-v{position:absolute;left:130px;top:0;width:40px;height:100%;background:#f5c1ce;z-index:5}.ribbon-h{position:absolute;left:0;right:0;top:47px;height:28px;background:#f5c1ce;z-index:6}
 .bow{position:absolute;left:50%;top:2px;width:115px;height:64px;transform:translateX(-50%);z-index:7}.bow:before,.bow:after{content:"";position:absolute;top:5px;width:60px;height:43px;background:#dd91a7;border:2px solid #a65b72;border-radius:55%}.bow:before{left:0;transform:rotate(20deg)}.bow:after{right:0;transform:rotate(-20deg)}.knot{position:absolute;left:50%;top:23px;width:31px;height:31px;transform:translateX(-50%);border-radius:50%;background:#d47c97;border:2px solid #a65b72}.tap{color:#7d4154;font:500 31px "Dancing Script";text-decoration:underline}
 .hug-content{width:min(760px,88%);height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}.hug-heading{color:#8b4057;font-size:clamp(40px,4.5vw,60px);margin-bottom:5px}.hug-video{width:min(350px,43%);height:min(275px,40vh);object-fit:contain;border-radius:18px}.hug-note{color:#754050;font:500 clamp(24px,2.5vw,31px) "Dancing Script";margin-top:3px}.mouah-video{width:min(105px,12vw);height:min(105px,13vh);object-fit:contain;border-radius:15px;margin-top:2px}.hug-small{color:#805064;font-size:20px;margin-top:1px}
-@media(max-width:760px){#app{padding:8px}.stage{width:98vw;height:94vh;border-radius:25px}.scene{padding:22px 8%}.hey-content .asset{width:255px;height:220px}.angry-content .asset{width:300px;height:250px}.good-content .asset{width:300px;height:260px}.photo-row{gap:8px}.polaroid{padding:6px 6px 20px}.caption{font-size:16px}.photo-bottom{bottom:28px}.letter-heading{font-size:40px}.envelope{width:78vw}.letter-hint{font-size:22px}.letter-card{padding:38px 25px}.letter-card p{font-size:20px}.hug-video{width:min(340px,70%);height:34vh}.mouah-video{width:90px;height:90px}}
+@media(max-width:760px){#app{padding:8px}.stage{width:98vw;height:94vh;border-radius:25px}.scene{padding:22px 8%}.hey-content .asset{width:275px;height:235px}.angry-content .asset{width:300px;height:250px}.good-content .asset{width:300px;height:260px}.photo-row{gap:8px}.polaroid{padding:6px 6px 20px}.caption{font-size:16px}.photo-bottom{bottom:28px}.letter-heading{font-size:40px}.envelope{width:78vw}.letter-hint{font-size:22px}.letter-card{padding:38px 25px}.letter-card p{font-size:20px}.hug-video{width:min(340px,70%);height:34vh}.mouah-video{width:90px;height:90px}}
+
+.letter-card{
+  width:min(520px,82%);
+  max-height:72%;
+  overflow:auto;
+  padding:28px 34px 24px;
+  box-sizing:border-box;
+  text-align:left;
+}
+.letter-small-heading{
+  font:500 clamp(30px,3.4vw,46px)/1 "Dancing Script";
+  color:#8b4158;
+  margin-bottom:16px;
+}
+.letter-card p{
+  font:400 clamp(18px,1.8vw,26px)/1.35 "Patrick Hand";
+  color:#55404a;
+  margin:9px 0;
+}
+.letter-signoff{
+  font:500 clamp(25px,2.7vw,38px)/1.1 "Dancing Script";
+  color:#8b4158;
+  margin:18px 0 16px;
+}
+
 </style></head>
 <body><div id="app"><main class="stage"><div class="paper"></div>
 
@@ -45,7 +70,7 @@
 <input id="password" type="password" placeholder="••••••••"><div class="error" id="passwordError"></div><button class="btn" onclick="unlock()">Open</button></div></section>
 
 <section class="scene" id="s2"><div class="hey-content"><img class="asset" src="assets/hey-cat.png" alt="">
-<h1 class="title">HEY!!</h1><div class="question script">I made something for my best friend<br>Do you want to see?</div>
+<h1 class="title">HEY!!</h1><div class="question script">I made something for you<br>Do you want to see?</div>
 <div class="buttons"><button class="btn" onclick="showScene('s3')">Yes</button><button class="btn" onclick="showScene('angry')">No</button></div></div></section>
 
 <section class="scene" id="angry"><div class="angry-content"><video class="asset" src="assets/angry-cat.mp4" autoplay muted loop playsinline></video><h1 class="title">HOW DARE YOU</h1><button class="btn" onclick="showScene('s2')">Go back</button></div></section>
@@ -56,9 +81,9 @@
 <div class="polaroid"><span class="clip"></span><img class="photo" src="assets/photo1.jpg"><div class="caption">a little memory ♡</div></div>
 <div class="polaroid"><span class="clip"></span><img class="photo" src="assets/photo2.jpg"><div class="caption">one of my favorites ♡</div></div>
 <div class="polaroid"><span class="clip"></span><img class="photo" src="assets/photo3.jpg"><div class="caption">you + me ♡</div></div></div>
-<div class="photo-bottom"><div class="i-love-you">I LOVE YOU</div><div class="photo-sub">You don't know how much you mean to me</div></div><button class="next" onclick="showScene('s5')">Next →</button></section>
+<div class="photo-bottom"><div class="i-love-you">BEST FRIENDS ♡</div><div class="photo-sub">Best memories are always better with you ♡</div></div><button class="next" onclick="showScene('s5')">Next →</button></section>
 
-<section class="scene" id="s5"><div class="letter-content"><div class="letter-heading script">A little letter for my best friend 💌</div>
+<section class="scene" id="s5"><div class="letter-content"><div class="letter-heading script">A little letter for you 💌</div>
 <div class="envelope" onclick="openLetter()"><div class="seal">♡</div></div><div class="letter-hint">Tap here to open</div><button class="next" onclick="openLetter()">Open →</button></div></section>
 
 <section class="scene" id="s6"><div class="gift-content"><div class="gift-heading script">Here’s a surprise for you!!!</div><div class="gift-sub">I saved one last thing for you ♡</div>
@@ -70,8 +95,8 @@
 </main></div>
 
 <div class="modal" id="letterModal"><div class="letter-card"><button class="close" onclick="closeLetter()">×</button><h2>For you ♡</h2>
-<p>You are seen, you are heard, and you are loved, no matter what.</p><p>If you ever feel unloved, remember that my best friend for you is boundless and endless.</p>
-<p style="font:600 34px 'Dancing Script';color:#8b4158">Always, always yours ♡</p><button class="btn" onclick="closeLetter()">Continue</button></div></div>
+<p>Thank you for being someone I can always laugh with, talk to, and be myself around.</p><p>If you ever feel unloved, remember that my love for you is boundless and endless.</p>
+<p style="font:600 34px 'Dancing Script';color:#8b4158">Always cheering for you ♡</p><button class="btn" onclick="closeLetter()">Continue</button></div></div>
 
 <script>
 const PASSWORD="love";
